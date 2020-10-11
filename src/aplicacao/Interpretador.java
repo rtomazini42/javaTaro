@@ -29,28 +29,28 @@ public class Interpretador {
 	}
 	
 	public void interpretaCarta(Carta carta){
-		System.out.println("Vejamos, você tirou");
+		System.out.println("Vejamos, vocÃª tirou");
 		System.out.println(carta.toString());
 		pausaDramatica(3);
 		if (carta.getValor() == 0) {
-			System.out.println("Um, o Coringa, está sentindo algum distanciamento?");
+			System.out.println("Um, o Coringa, estÃ¡ sentindo algum distanciamento?");
 			eixoX = eixoX -5;
 			eixoY = eixoY +5;
 			
 		}
 		if (carta.getValor() <= 7 ) {
-			System.out.println("vejo que queres mudança.  " +  carta.toString()+ "representa isso!");
+			System.out.println("vejo que queres mudanÃ§a.  " +  carta.toString()+ "representa isso!");
 			eixoX = eixoX +1;
 			
 		}
 		if (carta.getValor() <= 11 &&  carta.getValor() > 7) {
-			System.out.println("vejo que és determinado.  " +  carta.toString()+ "representa isso!");
+			System.out.println("vejo que Ã©s determinado.  " +  carta.toString()+ "representa isso!");
 			eixoX = eixoX +1;
 			eixoY = eixoY +1;
 			
 		}
 		if (carta.getValor() <= 16 &&  carta.getValor() > 11) {
-			System.out.println("Algumas coisas estão erradas, " +  carta.toString()+ "mostra isso!");
+			System.out.println("Algumas coisas estÃ£o erradas, " +  carta.toString()+ "mostra isso!");
 			eixoX = eixoX -1;
 			eixoY = eixoY -1;
 			
@@ -62,13 +62,13 @@ public class Interpretador {
 			
 		}
 		if (carta.getValor() == 18) {
-			System.out.println("Vejo alguma presença feminina perto. " +  carta.toString()+ "representa isso!");
+			System.out.println("Vejo alguma presenÃ§a feminina perto. " +  carta.toString()+ "representa isso!");
 			eixoX = eixoX +3;
 			eixoY = eixoY -2;
 			
 		}
 		if (carta.getValor() == 19) {
-			System.out.println("Vejo alguma presença masculina perto. " +  carta.toString()+ "representa isso!");
+			System.out.println("Vejo alguma presenÃ§a masculina perto. " +  carta.toString()+ "representa isso!");
 			eixoX = eixoX -1;
 			eixoY = eixoY +3;
 			
@@ -80,7 +80,7 @@ public class Interpretador {
 			
 		}
 		if (carta.getValor() == 21) {
-			System.out.println("Mudanças de rotinas proximas," +  carta.toString()+ "representa isso!");
+			System.out.println("MudanÃ§as de rotinas proximas," +  carta.toString()+ "representa isso!");
 			eixoX = eixoX -5;
 			eixoY = eixoY -4;
 			
@@ -90,33 +90,33 @@ public class Interpretador {
 		
 	}
 	public void analisaValores(int eixoX,int eixoY) {
-		System.out.println("Sua entropia é " + (eixoX+eixoY));
+		System.out.println("Sua entropia Ã© " + (eixoX+eixoY));
 		System.out.println("Analisando o mapa das suas cartas, eu vejo:");
 		if (eixoX > 0) {
 			if (eixoY > 0) {
-				System.out.println("O elemento é fogo. Vejo grande animação pro Futuro");
+				System.out.println("O elemento Ã© fogo. Vejo grande animaÃ§Ã£o pro Futuro");
 			}else {
-				System.out.println("O elemento é vento. Precisa de mudanças para maior liberdade.");
+				System.out.println("O elemento Ã© vento. Precisa de mudanÃ§as para maior liberdade.");
 			}
 			
 		}else {
 			if (eixoY > 0) {
-				System.out.println("O elemento é terra. Precisa esquecer o passado!");
+				System.out.println("O elemento Ã© terra. Precisa esquecer o passado!");
 			}else {
-				System.out.println("O elemento é água. Melancolia está associada ao seu futuro, cuide-se.");
+				System.out.println("O elemento Ã© Ã¡gua. Melancolia estÃ¡ associada ao seu futuro, cuide-se.");
 			}
 			
 		}
 		Random rand = new Random();
 		int int_random = rand.nextInt(100);
-		System.out.println("Seu número da sorte é: "+ int_random);
+		System.out.println("Seu nÃºmero da sorte Ã©: "+ int_random);
 		
 		
 	
 	}
 	public void Consultando() {
 		System.out.println();
-		System.out.println("Quantas cartas de 3 até 6 você quer que eu tire?");
+		System.out.println("Quantas cartas de 3 atÃ© 6 vocÃª quer que eu tire?");
 		bar.embaralha();
 		int qtd = sc.nextInt();
 		if(qtd < 3 || qtd > 6) {
@@ -124,8 +124,8 @@ public class Interpretador {
 			Consultando();
 		}else {
 			pausaDramatica(3);
-			System.out.println("Para cada carta farei a interpretação");
-			for(int i = 0; i <= qtd; i++) {
+			System.out.println("Para cada carta farei a interpretaÃ§Ã£o");
+			for(int i = 1; i <= qtd; i++) {
 				System.out.println();
 				pausaDramatica(3);
 				interpretaCarta(bar.sacar());
@@ -142,7 +142,7 @@ public class Interpretador {
 	}
 	
 	public void Consultar() {
-		System.out.println("Olá,saiba que a responsabilidade de interpretação não cabe apenas á mim, concentre-se");
+		System.out.println("OlÃ¡,saiba que a responsabilidade de interpretaÃ§Ã£o nÃ£o cabe apenas Ã¡ mim, concentre-se");
 		//Scanner sc = new Scanner(System.in);
 		
 		System.out.println("Digite a pergunta:");
