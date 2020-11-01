@@ -6,13 +6,9 @@ import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
+import javafx.scene.media.AudioClip;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 
 
 
@@ -22,6 +18,8 @@ import javafx.stage.Stage;
 
 public class TelaConsultaController implements Initializable{
 	String Nome = System.getProperty("user.name");
+	private String selector = getClass().getResource("/sounds/selector.mp3").toString();
+	private AudioClip audioSelector = new AudioClip(selector);
 	
 
 
@@ -38,9 +36,9 @@ private void nomear() {
 private void consultar(ActionEvent event){
 	//String Nome = System.getProperty("user.name");	
 	//nomeUser.setText(Nome.toUpperCase());
+	audioSelector.play();
 	
-	
-	NavegadorJanelas.navega(1);
+	NavegadorJanelas.navega(-1);
 	
 	
 	

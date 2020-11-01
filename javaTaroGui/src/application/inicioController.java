@@ -2,26 +2,41 @@
 
 package application;
 
-import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.stage.Stage;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.media.AudioClip;
+import javafx.scene.text.Text;
 
 
 
 public class inicioController implements Initializable{
+	private String selector = getClass().getResource("/sounds/selector.mp3").toString();
+	private AudioClip audioSelector = new AudioClip(selector);
 	
 	
 	
+
+@FXML
+private ImageView card;
+
+@FXML
+private ImageView mago;
+
+
+@FXML
+private Text beta;
+
+@FXML
+private ImageView logo;
+
+
+
 
 
 
@@ -29,6 +44,7 @@ public class inicioController implements Initializable{
 
 @FXML
 private void iniciar(ActionEvent event){
+	audioSelector.play();
 	gameLoop.GameLoop.iniciar();
 	NavegadorJanelas.navega(0);
 	
@@ -42,9 +58,15 @@ private void saida(ActionEvent event){
 	
 }
 
+@FXML
+void mostrar(MouseEvent event) {
+	//beta.setVisible(true);
+	mago.setVisible(true);
+}
+
 
 @Override
 public void initialize(URL url, ResourceBundle rb){
-
+	
 }
 }

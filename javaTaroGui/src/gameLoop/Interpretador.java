@@ -141,8 +141,8 @@ public class Interpretador {
 		
 	}
 	
-	public String pegarUma() {
-		return bar.sacar().toString();
+	public int pegarUma() {
+		return bar.sacar().getValor();
 	}
 	
 	public void Consultar() {

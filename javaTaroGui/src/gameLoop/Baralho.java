@@ -57,6 +57,7 @@ public class Baralho {
 		
 		//System.out.println("Carta sacada: "+ cartas.get(0));
 		cartas.remove(0);
+		System.out.println(sacada.getNome() +" | "+ sacada.getValor());
 		//System.out.println("Carta topo: "+ cartas.get(0));
 		return(sacada);
 		
