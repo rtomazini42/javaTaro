@@ -1,8 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="application.telaFinalController">
+   <children>
+      <ImageView disable="true" fitHeight="600.0" fitWidth="800.0" layoutX="-13.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/images/fundo_madeira.jpg" />
+         </image>
+         <effect>
+            <InnerShadow choke="0.26" height="180.87" radius="95.92750000000001" width="204.84" />
+         </effect>
+      </ImageView>
+      <ImageView fx:id="carta1" fitHeight="260.0" fitWidth="167.0" layoutX="128.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/images/cartas/trás.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="carta2" fitHeight="260.0" fitWidth="167.0" layoutX="311.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/images/cartas/trás.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="carta3" fitHeight="260.0" fitWidth="167.0" layoutX="494.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/images/cartas/trás.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="retorno" blendMode="SCREEN" layoutX="651.0" layoutY="521.0" mnemonicParsing="false" onAction="#reinicio" prefHeight="65.0" prefWidth="135.0" text="Reiniciar">
+         <effect>
+            <InnerShadow choke="0.69" height="68.44" radius="35.2025" width="74.37" />
+         </effect>
+         <font>
+            <Font name="Candara Light" size="23.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <TextArea fx:id="TextoInterpretacao" disable="true" editable="false" layoutX="113.0" layoutY="44.0" opacity="0.56" prefHeight="471.0" prefWidth="564.0" text="AQUI VAI O TEXTO">
+         <effect>
+            <InnerShadow choke="0.16" height="157.4" radius="62.6325" width="95.13" />
+         </effect>
+         <font>
+            <Font name="Times New Roman" size="23.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextArea>
+      <Button fx:id="esconderMostrarBTN" blendMode="BLUE" layoutX="338.0" layoutY="521.0" mnemonicParsing="false" onAction="#esconderMostrar" text="Esconder" textAlignment="CENTER">
+         <font>
+            <Font size="21.0" />
+         </font>
+         <effect>
+            <InnerShadow choke="0.16" height="92.16" radius="41.875" width="77.34" />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
 </AnchorPane>
-

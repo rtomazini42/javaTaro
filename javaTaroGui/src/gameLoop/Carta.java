@@ -30,6 +30,7 @@ public class Carta {
 		this.nome = nome;
 	}
 	
+	
 	public String toString() {
 		//return "Carta: "+ getNome() + " " + getValor() + "";
 		return " "+ getNome() + " ";

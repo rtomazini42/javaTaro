@@ -16,6 +16,8 @@ import javafx.scene.text.Text;
 
 
 public class inicioController implements Initializable{
+	public String inicioMus = getClass().getResource("/sounds/meio.mp3").toString();
+	public  AudioClip audioInicio = new AudioClip(inicioMus);
 	private String selector = getClass().getResource("/sounds/selector.mp3").toString();
 	private AudioClip audioSelector = new AudioClip(selector);
 	
@@ -45,6 +47,7 @@ private ImageView logo;
 @FXML
 private void iniciar(ActionEvent event){
 	audioSelector.play();
+	audioInicio.stop();
 	gameLoop.GameLoop.iniciar();
 	NavegadorJanelas.navega(0);
 	
@@ -67,6 +70,6 @@ void mostrar(MouseEvent event) {
 
 @Override
 public void initialize(URL url, ResourceBundle rb){
-	
+	audioInicio.play();
 }
 }

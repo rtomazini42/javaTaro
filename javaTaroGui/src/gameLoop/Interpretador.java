@@ -7,7 +7,8 @@ public class Interpretador {
 	 int eixoX =0;
      int eixoY =0;
      Baralho bar =  new Baralho();
-	
+ 
+     
 	Scanner sc = new Scanner(System.in);
 		
 
@@ -114,50 +115,61 @@ public class Interpretador {
 		
 	
 	}
-	public void Consultando() {
-		System.out.println();
-		System.out.println("Quantas cartas de 3 até 6 você quer que eu tire?");
-		bar.embaralha();
-		int qtd = sc.nextInt();
-		if(qtd < 3 || qtd > 6) {
-			System.out.println("Por favor, diga uma quantidade certa para que eu possa avaliar melhor");
-			Consultando();
-		}else {
-			pausaDramatica(3);
-			System.out.println("Para cada carta farei a interpretação");
-			for(int i = 1; i <= qtd; i++) {
-				System.out.println();
-				pausaDramatica(3);
-				interpretaCarta(bar.sacar());
-				System.out.println();
-			}
-			analisaValores(eixoX, eixoY);
-			
-			System.out.println("Terminada a consulta,espero ter sido esclarecedor.");
-			
-			
-			
-		}
-		
-	}
+//	public void Consultando() {
+//		System.out.println();
+//		System.out.println("Quantas cartas de 3 até 6 você quer que eu tire?");
+//		bar.embaralha();
+//		int qtd = sc.nextInt();
+//		if(qtd < 3 || qtd > 6) {
+//			System.out.println("Por favor, diga uma quantidade certa para que eu possa avaliar melhor");
+//			Consultando();
+//		}else {
+//			pausaDramatica(3);
+//			System.out.println("Para cada carta farei a interpretação");
+//			for(int i = 1; i <= qtd; i++) {
+//				System.out.println();
+//				pausaDramatica(3);
+//				interpretaCarta(bar.sacar());
+//				System.out.println();
+//			}
+//			analisaValores(eixoX, eixoY);
+//			
+//			System.out.println("Terminada a consulta,espero ter sido esclarecedor.");
+//			
+//			
+//			
+//		}
+//		
+//	}
 	
 	public int pegarUma() {
-		return bar.sacar().getValor();
+		
+		return bar.sacar();
 	}
 	
-	public void Consultar() {
-		System.out.println("Olá,saiba que a responsabilidade de interpretação não cabe apenas á mim, concentre-se");
-		//Scanner sc = new Scanner(System.in);
-		
-		System.out.println("Digite a pergunta:");
-		String pergunta = sc.nextLine();
-		System.out.println();
-    	System.out.println("Concentre-se na Pergunta: "+pergunta);
-    	pausaDramatica(3);
-    	System.out.println("aguarde, eu levo tempo interpreteando");
-    	Consultando();
-
-    	
+	
+	
+	
+//	public void Consultar() {
+//		System.out.println("Olá,saiba que a responsabilidade de interpretação não cabe apenas á mim, concentre-se");
+//		//Scanner sc = new Scanner(System.in);
+//		
+//		System.out.println("Digite a pergunta:");
+//		String pergunta = sc.nextLine();
+//		System.out.println();
+//    	System.out.println("Concentre-se na Pergunta: "+pergunta);
+//    	pausaDramatica(3);
+//    	System.out.println("aguarde, eu levo tempo interpreteando");
+//    	Consultando();
+//
+//    	
+//	}
+	
+	public void verMesa() {
+		for(int n = 0; n <3; n++) {
+			bar.verMesa(n);
+			//System.out.println("Na mesa");
+		}
 	}
 	
 	

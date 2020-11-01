@@ -1,17 +1,17 @@
 package application;
 	
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.media.AudioClip;
 
 
 public class NavegadorJanelas extends Application {
-	private String mesa = getClass().getResource("/sounds/mesa.mp3").toString();
-	private AudioClip audioMesa = new AudioClip(mesa);
+//	public String mesa = getClass().getResource("/sounds/mesa.mp3").toString();
+//	public  AudioClip audioMesa = new AudioClip(mesa);
 
 	
 	//String source = "file://sounds/inicio.mp3"; //pq não acha?
@@ -25,15 +25,16 @@ public class NavegadorJanelas extends Application {
 	private static Stage primaryStage;
 	@Override
 	    public void start(Stage stage) throws Exception {
-		audioMesa.play();
+		//audioMesa.play();
 		//AudioClip clip = new AudioClip(audio);
+		//audio
 	     
 		
 		////telas
 	       	Parent inicio = FXMLLoader.load(getClass().getResource("/fxml/inicio.fxml"));
 	       	Parent game = FXMLLoader.load(getClass().getResource("/fxml/telaConsulta.fxml"));
 	       	Parent mesa = FXMLLoader.load(getClass().getResource("/fxml/telaMesa.fxml"));
-	       	Parent fim = FXMLLoader.load(getClass().getResource("/fxml/telaFinal.fxml"));
+	       	Parent fim = FXMLLoader.load(getClass().getResource("/fxml/telaFim.fxml"));
 			primaryStage = stage;
 			
 			
@@ -55,21 +56,33 @@ public class NavegadorJanelas extends Application {
 	}
 	        
 	        
-	       
+	      
 	    
 	
-		public static void navega(int num) {
+		public static void navega(int num) {	
+			ControleMusica player = new ControleMusica();
 			switch(num){
 			case -1:
-				primaryStage.setScene(inicioScene);
+				player.ligar(4);
+				primaryStage.close();
+				Platform.runLater( () -> {
+					try {
+						new NavegadorJanelas().start( new Stage() );
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				} );
 				break;
 			case 0:
+				player.ligar(1);
 				primaryStage.setScene(consultaScene);
 				break;
 			case 1:
+				player.ligar(2);
 				primaryStage.setScene(mesaScene);
 				break;
 			case 2:
+				player.ligar(3);
 				primaryStage.setScene(finalScene);
 				break;
 			
@@ -86,9 +99,12 @@ public class NavegadorJanelas extends Application {
            // mediaPlayer.play();}
 
 	
-	public static void main(String[] args) {
-		launch(args);
-	}
+//	public static void main(String[] args) {
+//		launch(args);
+//	}
+		
+		public void main(String[] args) {
+		launch(args);}
 	
 
 }

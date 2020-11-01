@@ -38,7 +38,7 @@ private void consultar(ActionEvent event){
 	//nomeUser.setText(Nome.toUpperCase());
 	audioSelector.play();
 	
-	NavegadorJanelas.navega(-1);
+	NavegadorJanelas.navega(1);
 	
 	
 	
@@ -49,6 +49,7 @@ private void consultar(ActionEvent event){
 
 @Override
 public void initialize(URL url, ResourceBundle rb){
-
+	//audioMesa.play();
+	
 }
 }

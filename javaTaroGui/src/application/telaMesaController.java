@@ -1,8 +1,11 @@
 package application;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -15,7 +18,12 @@ public class telaMesaController {
 	boolean carta1Virada = false;
 	boolean carta2Virada = false;
 	boolean carta3Virada = false;
-	static int[] NaMesa = new int[3];
+	int num1;
+	int num2;
+	int num3;
+	
+	
+	
 	
 	
     @FXML
@@ -28,28 +36,21 @@ public class telaMesaController {
     private ImageView carta3;
     
 
-    @FXML
-    private TextArea carta1nome;
 
-    @FXML
-    private TextArea carta2nome;
-
-    @FXML
-    private TextArea carta3nome;
     
     @FXML
     private Button analise;
+	
 
     
     @FXML
     private void primeiraCarta(MouseEvent event){
     	if(carta1Virada == false) {
-    		int num1 = interpretador.pegarUma();
+    		num1 = interpretador.pegarUma();
     		audioFlip.play();
     		String caminho = "/images/cartas/cartas-" + num1 + ".jpg";
     		carta1.setImage(new Image(caminho));
     		carta1Virada = true;
-    		NaMesa[0]= num1;
     		//carta1.setVisible(true);
     	}
     	desocultarBotão();
@@ -61,11 +62,12 @@ public class telaMesaController {
     @FXML
     private void segundaCarta(MouseEvent event){
     	if(carta2Virada == false) {
-    		int num2 = interpretador.pegarUma();
+    		audioFlip.play();
+    		num2 = interpretador.pegarUma();
     		String caminho = "/images/cartas/cartas-" + num2 + ".jpg";
     		carta2.setImage(new Image(caminho));
     		carta2Virada = true;
-    		NaMesa[1]= num2;
+ 
     	}
     	desocultarBotão();
     	
@@ -76,13 +78,13 @@ public class telaMesaController {
     @FXML
     private void terceiraCarta(MouseEvent event){
     	if(carta3Virada == false) {
-    		int num3 = interpretador.pegarUma();
+    		num3 = interpretador.pegarUma();
     		audioFlip.play();
     		String caminho = "/images/cartas/cartas-" + num3 + ".jpg";
     		carta3.setImage(new Image(caminho));
     		//carta3.setImage(new Image("/images/cartas/cartas-" + num3 + ".jpg"));
     		carta3Virada = true;
-    		NaMesa[2]= num3;
+    		
     		
     	}
     	desocultarBotão();
@@ -91,19 +93,30 @@ public class telaMesaController {
     	
     }
     
+    @FXML
+    private void consultar(ActionEvent event){
+    	interpretador.verMesa();
+    	NavegadorJanelas.navega(2);
+    	//System.out.println(interpretador.NaMesaO());
+    }
+    
     
     private void desocultarBotão() {
     	if(carta3Virada == true && carta2Virada == true && carta1Virada == true) {
     	analise.setVisible(true);
-    	NavegadorJanelas.navega(2);
+    	//NavegadorJanelas.navega(2);
     	}
+
     	
     }
     
 
+  
 
-    
-    
-    
+
+public void initialize(URL url, ResourceBundle rb){
+	//audioMesa.play();
+
+}
 
 }
