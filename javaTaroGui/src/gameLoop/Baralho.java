@@ -71,7 +71,7 @@ public class Baralho {
 	
 	public Object verMesa(int n) {
 		System.out.println(emJogo[n]);
-		return emJogo[n];
+		return emJogo[0];
 	}
 
 

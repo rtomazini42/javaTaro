@@ -23,7 +23,7 @@
             <InnerShadow choke="0.36" height="222.63" radius="95.2475" width="160.36" />
          </effect>
       </ImageView>
-      <Text fill="WHITE" layoutX="198.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qual sua pergunta?" textAlignment="CENTER" wrappingWidth="391.13671875">
+      <Text fill="WHITE" layoutX="198.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Concentre-se na pergunta antes de iniciar" textAlignment="CENTER" wrappingWidth="391.13671875">
          <font>
             <Font name="Times New Roman" size="47.0" />
          </font>
@@ -31,14 +31,14 @@
             <Glow level="1.0" />
          </effect>
       </Text>
-      <TextField fx:id="perguntatxt" layoutX="181.0" layoutY="299.0" opacity="0.81" prefHeight="155.0" prefWidth="413.0">
+<!--       <TextField fx:id="perguntatxt" layoutX="181.0" layoutY="299.0" opacity="0.81" prefHeight="155.0" prefWidth="413.0">
          <font>
             <Font name="Times New Roman" size="22.0" />
          </font>
          <effect>
-            <BoxBlur />
+           <BoxBlur />
          </effect>
-      </TextField>
+     </TextField> -->
       <Button fx:id="botaoConsultar" blendMode="SCREEN" layoutX="297.0" layoutY="467.0" mnemonicParsing="false" onAction="#consultar" text="Consultar" textAlignment="CENTER">
          <font>
             <Font name="Times New Roman" size="37.0" />

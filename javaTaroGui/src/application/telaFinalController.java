@@ -5,17 +5,30 @@ import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
+//import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-public class telaFinalController implements Initializable{
-	private boolean visivel = true;
+public class telaFinalController extends telaMesaController{
+	
+	private boolean visivel = false;
+	
+	@FXML
+	private void imaginizar() {
+		//System.out.println(telaMesaController.interpretador.toString());
+		carta1.setImage(new Image(interpretador.urlimages.get(0)));
+		carta2.setImage(new Image(interpretador.urlimages.get(1)));
+		carta3.setImage(new Image(interpretador.urlimages.get(2)));
+	}
+	
 	
 	
     @FXML
     private ImageView carta1;
+    
+    
 
     @FXML
     private ImageView carta2;
@@ -32,8 +45,13 @@ public class telaFinalController implements Initializable{
     @FXML
     private TextArea TextoInterpretacao;
     
+
+
+    
     @FXML
     private void esconderMostrar(ActionEvent event) {
+    	imaginizar();
+    	TextoInterpretacao.setText(interpretador.lerMesa());
     	if(visivel == true) {
     		esconderMostrarBTN.setText("Mostrar");
     		TextoInterpretacao.setVisible(false);
@@ -45,24 +63,24 @@ public class telaFinalController implements Initializable{
     		
     	}
     	
+    	
     }
+    
     
     @FXML
     private void reinicio(ActionEvent event) {
+
     	NavegadorJanelas.navega(-1);
     	
     	
     }
 
 
-	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-		//som.play();
+
+	public void initialize(URL url, ResourceBundle rb){
 		
-		// TODO Auto-generated method stub
-		
+
 	}
-    
     
 
 }

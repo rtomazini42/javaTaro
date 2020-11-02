@@ -25,11 +25,6 @@ public class NavegadorJanelas extends Application {
 	private static Stage primaryStage;
 	@Override
 	    public void start(Stage stage) throws Exception {
-		//audioMesa.play();
-		//AudioClip clip = new AudioClip(audio);
-		//audio
-	     
-		
 		////telas
 	       	Parent inicio = FXMLLoader.load(getClass().getResource("/fxml/inicio.fxml"));
 	       	Parent game = FXMLLoader.load(getClass().getResource("/fxml/telaConsulta.fxml"));
@@ -60,6 +55,7 @@ public class NavegadorJanelas extends Application {
 	    
 	
 		public static void navega(int num) {	
+			//cartasTiradas tiradas = new cartasTiradas();
 			ControleMusica player = new ControleMusica();
 			switch(num){
 			case -1:
@@ -104,6 +100,7 @@ public class NavegadorJanelas extends Application {
 //	}
 		
 		public void main(String[] args) {
+
 		launch(args);}
 	
 

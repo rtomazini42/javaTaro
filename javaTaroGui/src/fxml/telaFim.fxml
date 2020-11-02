@@ -45,7 +45,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <TextArea fx:id="TextoInterpretacao" disable="true" editable="false" layoutX="113.0" layoutY="44.0" opacity="0.56" prefHeight="471.0" prefWidth="564.0" text="AQUI VAI O TEXTO">
+      <TextArea fx:id="TextoInterpretacao" disable="true" editable="false" layoutX="113.0" layoutY="44.0" opacity="0.70" prefHeight="471.0" prefWidth="564.0" text="AQUI VAI O TEXTO" visible="false" wrapText="true">
          <effect>
             <InnerShadow choke="0.16" height="157.4" radius="62.6325" width="95.13" />
          </effect>
@@ -56,7 +56,7 @@
             <Cursor fx:constant="TEXT" />
          </cursor>
       </TextArea>
-      <Button fx:id="esconderMostrarBTN" blendMode="BLUE" layoutX="338.0" layoutY="521.0" mnemonicParsing="false" onAction="#esconderMostrar" text="Esconder" textAlignment="CENTER">
+      <Button fx:id="esconderMostrarBTN" blendMode="SCREEN" layoutX="338.0" layoutY="521.0" mnemonicParsing="false" onAction="#esconderMostrar" text="Resultado" textAlignment="CENTER">
          <font>
             <Font size="21.0" />
          </font>

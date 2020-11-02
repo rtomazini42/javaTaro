@@ -1,6 +1,7 @@
 package application;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
@@ -14,13 +15,16 @@ import javafx.scene.media.AudioClip;
 public class telaMesaController {
 	private String flip = getClass().getResource("/sounds/flip.mp3").toString();
 	private AudioClip audioFlip = new AudioClip(flip);
-	gameLoop.Interpretador interpretador = new gameLoop.Interpretador();
+	static gameLoop.Interpretador interpretador = new gameLoop.Interpretador();
 	boolean carta1Virada = false;
 	boolean carta2Virada = false;
 	boolean carta3Virada = false;
 	int num1;
 	int num2;
 	int num3;
+	
+	
+	
 	
 	
 	
@@ -49,6 +53,7 @@ public class telaMesaController {
     		num1 = interpretador.pegarUma();
     		audioFlip.play();
     		String caminho = "/images/cartas/cartas-" + num1 + ".jpg";
+    		interpretador.setUrlimages(caminho);
     		carta1.setImage(new Image(caminho));
     		carta1Virada = true;
     		//carta1.setVisible(true);
@@ -65,6 +70,7 @@ public class telaMesaController {
     		audioFlip.play();
     		num2 = interpretador.pegarUma();
     		String caminho = "/images/cartas/cartas-" + num2 + ".jpg";
+    		interpretador.setUrlimages(caminho);
     		carta2.setImage(new Image(caminho));
     		carta2Virada = true;
  
@@ -81,6 +87,7 @@ public class telaMesaController {
     		num3 = interpretador.pegarUma();
     		audioFlip.play();
     		String caminho = "/images/cartas/cartas-" + num3 + ".jpg";
+    		interpretador.setUrlimages(caminho);
     		carta3.setImage(new Image(caminho));
     		//carta3.setImage(new Image("/images/cartas/cartas-" + num3 + ".jpg"));
     		carta3Virada = true;
@@ -95,7 +102,9 @@ public class telaMesaController {
     
     @FXML
     private void consultar(ActionEvent event){
-    	interpretador.verMesa();
+    	//interpretador.verMesa();
+    	System.out.println(interpretador.toString());
+    	
     	NavegadorJanelas.navega(2);
     	//System.out.println(interpretador.NaMesaO());
     }
@@ -104,6 +113,7 @@ public class telaMesaController {
     private void desocultarBotão() {
     	if(carta3Virada == true && carta2Virada == true && carta1Virada == true) {
     	analise.setVisible(true);
+    	
     	//NavegadorJanelas.navega(2);
     	}
 
@@ -111,12 +121,11 @@ public class telaMesaController {
     }
     
 
+
+
+
   
 
 
-public void initialize(URL url, ResourceBundle rb){
-	//audioMesa.play();
-
-}
 
 }

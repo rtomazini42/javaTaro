@@ -36,6 +36,7 @@ private void nomear() {
 private void consultar(ActionEvent event){
 	//String Nome = System.getProperty("user.name");	
 	//nomeUser.setText(Nome.toUpperCase());
+	
 	audioSelector.play();
 	
 	NavegadorJanelas.navega(1);
