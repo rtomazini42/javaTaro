@@ -13,7 +13,6 @@ public class Baralho {
 	int[] emJogo = new int[3];
 	
     public Baralho() {
-    	
         cartas = new ArrayList<>();
         criarCartas();
       
@@ -73,6 +72,10 @@ public class Baralho {
 		System.out.println(emJogo[n]);
 		return emJogo[0];
 	}
+
+
+
+	
 
 
 

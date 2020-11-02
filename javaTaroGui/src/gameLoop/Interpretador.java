@@ -12,6 +12,7 @@ public class Interpretador {
 	public void setUrlimages(String caminho){
 		urlimages.add(caminho);
 	}
+	
 
 
 
@@ -20,7 +21,6 @@ public class Interpretador {
 		
 
 	public Interpretador() {
-		
 		bar.embaralha();
 		
 
@@ -116,10 +116,12 @@ public class Interpretador {
 		int valor1 = bar.emJogo[0];
 		int valor2 = bar.emJogo[1];
 		int valor3 = bar.emJogo[2];
-		String resultado = interpretaCarta(valor1) +"\n" + interpretaCarta(valor2) +"\n" +interpretaCarta(valor3);
+		String resultado = interpretaCarta(valor1) +"\n\n" + interpretaCarta(valor2) +"\n\n" +interpretaCarta(valor3);
 		return resultado;
 		
 	}
+
+
 
 	
 

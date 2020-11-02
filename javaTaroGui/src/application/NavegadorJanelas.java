@@ -26,11 +26,13 @@ public class NavegadorJanelas extends Application {
 	@Override
 	    public void start(Stage stage) throws Exception {
 		////telas
+		
 	       	Parent inicio = FXMLLoader.load(getClass().getResource("/fxml/inicio.fxml"));
 	       	Parent game = FXMLLoader.load(getClass().getResource("/fxml/telaConsulta.fxml"));
 	       	Parent mesa = FXMLLoader.load(getClass().getResource("/fxml/telaMesa.fxml"));
 	       	Parent fim = FXMLLoader.load(getClass().getResource("/fxml/telaFim.fxml"));
 			primaryStage = stage;
+			
 			
 			
 	        inicioScene = new Scene(inicio);
@@ -63,6 +65,7 @@ public class NavegadorJanelas extends Application {
 				primaryStage.close();
 				Platform.runLater( () -> {
 					try {
+						;
 						new NavegadorJanelas().start( new Stage() );
 					} catch (Exception e) {
 						e.printStackTrace();

@@ -69,7 +69,8 @@ public class telaFinalController extends telaMesaController{
     
     @FXML
     private void reinicio(ActionEvent event) {
-
+    	
+    	interpretador = new gameLoop.Interpretador();
     	NavegadorJanelas.navega(-1);
     	
     	
