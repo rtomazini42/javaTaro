@@ -1,7 +1,6 @@
 package gameLoop;
 
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Interpretador {
@@ -83,9 +82,6 @@ public class Interpretador {
 			return("O Julgamento. Este é um momento de separação entre o passado e o futuro, neste momento o consulente irá colher os frutos do que plantou.");
 		case 21:
 			return("O mundo? fim de um ciclo e preparação para um novo começo,suavidade e felicidade.");
-		
-		
-		
 		}
 		return null;
 		
@@ -94,57 +90,8 @@ public class Interpretador {
 	
 	
 	
-	public void analisaValores(int eixoX,int eixoY) {
-		System.out.println("Sua entropia é " + (eixoX+eixoY));
-		System.out.println("Analisando o mapa das suas cartas, eu vejo:");
-		if (eixoX > 0) {
-			if (eixoY > 0) {
-				System.out.println("O elemento é fogo. Vejo grande animação pro Futuro");
-			}else {
-				System.out.println("O elemento é vento. Precisa de mudanças para maior liberdade.");
-			}
-			
-		}else {
-			if (eixoY > 0) {
-				System.out.println("O elemento é terra. Precisa esquecer o passado!");
-			}else {
-				System.out.println("O elemento é água. Melancolia está associada ao seu futuro, cuide-se.");
-			}
-			
-		}
-		Random rand = new Random();
-		int int_random = rand.nextInt(100);
-		System.out.println("Seu número da sorte é: "+ int_random);
-		
-		
-	
-	}
-//	public void Consultando() {
-//		System.out.println();
-//		System.out.println("Quantas cartas de 3 até 6 você quer que eu tire?");
-//		bar.embaralha();
-//		int qtd = sc.nextInt();
-//		if(qtd < 3 || qtd > 6) {
-//			System.out.println("Por favor, diga uma quantidade certa para que eu possa avaliar melhor");
-//			Consultando();
-//		}else {
-//			pausaDramatica(3);
-//			System.out.println("Para cada carta farei a interpretação");
-//			for(int i = 1; i <= qtd; i++) {
-//				System.out.println();
-//				pausaDramatica(3);
-//				interpretaCarta(bar.sacar());
-//				System.out.println();
-//			}
-//			analisaValores(eixoX, eixoY);
-//			
-//			System.out.println("Terminada a consulta,espero ter sido esclarecedor.");
-//			
-//			
-//			
-//		}
-//		
-//	}
+
+
 	
 	public int pegarUma() {
 		
@@ -154,20 +101,7 @@ public class Interpretador {
 	
 	
 	
-//	public void Consultar() {
-//		System.out.println("Olá,saiba que a responsabilidade de interpretação não cabe apenas á mim, concentre-se");
-//		//Scanner sc = new Scanner(System.in);
-//		
-//		System.out.println("Digite a pergunta:");
-//		String pergunta = sc.nextLine();
-//		System.out.println();
-//    	System.out.println("Concentre-se na Pergunta: "+pergunta);
-//    	pausaDramatica(3);
-//    	System.out.println("aguarde, eu levo tempo interpreteando");
-//    	Consultando();
-//
-//    	
-//	}
+
 	
 	public void verMesa() {
 		for(int n = 0; n <3; n++) {
